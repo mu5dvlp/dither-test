@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1feef31539dfe470487c51e2b06d0903, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shaderType: 2
+  shaderType: 0
   alpha: 1
   targetRenderer: {fileID: 856443932}
   materials:
@@ -217,7 +217,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 429effdb250964e5ca880a4200965424, type: 2}
+  - {fileID: 2100000, guid: d44ea9689556040fab61c904e9c49146, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
