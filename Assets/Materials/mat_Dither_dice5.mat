@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: mat_Dither_diagonal4
-  m_Shader: {fileID: 4800000, guid: f10ca68b988d8488aa51ce99c85bc53d, type: 3}
+  m_Name: mat_Dither_dice5
+  m_Shader: {fileID: 4800000, guid: 3256445d214ad43218af9415de72d905, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []

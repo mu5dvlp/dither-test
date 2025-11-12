@@ -40,7 +40,7 @@ Shader "Dithers/Dither_bayer64"
             fixed4 _Color;
             float _Alpha;
 
-            static const int ditherMap[64] = {
+            static const uint ditherMap[64] = {
                 0, 48, 12, 60, 3, 51, 15, 63,
                 32, 16, 44, 28, 35, 19, 47, 31,
                 8, 56, 4, 52, 11, 59, 7, 55,
@@ -53,7 +53,7 @@ Shader "Dithers/Dither_bayer64"
 
             float Bayer64(float2 Pos)
             {
-                return ditherMap[(int(Pos.x) % 8) + (int(Pos.y) % 8) * 8]/64.0;
+                return ditherMap[(uint(Pos.x) % 8) + (uint(Pos.y) % 8) * 8]/64.0;
             }
 
             fixed4 frag (v2f i) : SV_Target

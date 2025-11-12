@@ -40,14 +40,14 @@ Shader "Dithers/Dither_bayer4"
             fixed4 _Color;
             float _Alpha;
 
-            static const int ditherMap[4] = {
+            static const uint ditherMap[4] = {
                 0, 2,
                 3, 1
             };
 
             float Bayer4(float2 Pos)
             {
-                return ditherMap[(int(Pos.x) % 2) + (int(Pos.y) % 2) * 2]/4.0;
+                return ditherMap[(uint(Pos.x) % 2) + (uint(Pos.y) % 2) * 2]/4.0;
             }
 
             fixed4 frag (v2f i) : SV_Target

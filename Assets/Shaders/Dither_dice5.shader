@@ -1,4 +1,4 @@
-Shader "Dithers/Dither_bayer16"
+Shader "Dithers/Dither_dice5"
 {
     Properties
     {
@@ -40,23 +40,17 @@ Shader "Dithers/Dither_bayer16"
             fixed4 _Color;
             float _Alpha;
 
-            static const uint ditherMap[16] = {
-                0, 8, 2, 10,
-                12, 4, 14, 6,
-                3, 11, 1, 9,
-                15, 7, 13, 5
-            };
-
-            float Bayer16(float2 Pos)
+            float Diagonal4(float2 Pos)
             {
-                return ditherMap[(uint(Pos.x) % 4) + (uint(Pos.y) % 4) * 4]/16.0;
+                uint2 p = uint2(Pos);
+                return (p.x + p.y*3)%5/5.0;
             }
 
             fixed4 frag (v2f i) : SV_Target
             {
                 float2 screenPos = i.screenPos.xy / i.screenPos.w;
                 screenPos *= _ScreenParams.xy;
-                clip(Bayer16(screenPos) - (1-_Alpha));
+                clip(Diagonal4(screenPos) - (1-_Alpha));
 
                 return _Color;
             }

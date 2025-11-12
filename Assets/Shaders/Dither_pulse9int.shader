@@ -42,7 +42,7 @@ Shader "Dithers/Dither_pulse9int"
 
             float Pulse9Int(float2 Pos)
             {
-                int2 p = int2(Pos);
+                uint2 p = uint2(Pos);
                 return (p.x + (p.y*2))%9/9.0;
             }
 

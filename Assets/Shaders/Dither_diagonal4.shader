@@ -42,7 +42,7 @@ Shader "Dithers/Dither_diagonal4"
 
             float Diagonal4(float2 Pos)
             {
-                int2 p = int2(Pos);
+                uint2 p = uint2(Pos);
                 return (p.x + p.y)%4/4.0;
             }
 
