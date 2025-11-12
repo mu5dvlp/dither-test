@@ -50,7 +50,7 @@ Shader "Dithers/Dither_tileH"
                 2,3,6,0,5,4,1,
             };
 
-            float Pulse9Int(float2 Pos)
+            float TileH(float2 Pos)
             {
                 uint2 p = uint2(Pos);
                 return ditherMap[(p.x % 7) + (p.y % 7) * 7]/7.0;
@@ -60,7 +60,7 @@ Shader "Dithers/Dither_tileH"
             {
                 float2 screenPos = i.screenPos.xy / i.screenPos.w;
                 screenPos *= _ScreenParams.xy;
-                clip(Pulse9Int(screenPos) - (1-_Alpha));
+                clip(TileH(screenPos) - (1-_Alpha));
 
                 return _Color;
             }
