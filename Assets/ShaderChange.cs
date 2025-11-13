@@ -10,6 +10,7 @@ public class ShaderChange : MonoBehaviour
         Bayer16,
         Bayer64,
         TileH,
+        Asiro3,
         Diagonal4,
         Dice5,
         Pulse5Int,
